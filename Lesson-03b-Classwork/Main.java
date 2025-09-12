@@ -8,7 +8,7 @@ class Main {
 
   void init(){
    System.out.println("Sean York");
-   System.out.println("Sean York \n123 Plae Grown Stret");
+   System.out.println("Sean York \n123 Plae Grownd Stret");
     
   }
 
