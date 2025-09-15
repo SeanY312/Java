@@ -11,7 +11,9 @@ class Main {
     2) number of people that live with you
     3) number of items in a cart 
 */
-  
+  int age = 16;
+  int people = 2;
+  int items = 1;
  
  
 
@@ -23,8 +25,9 @@ class Main {
     2) student's GPA
     3) growth rate of your investment
 */
-
-
+    double temp = 98;
+    double gpa = 3.9;
+    double growth = 4;
 
 
 /*  
@@ -34,6 +37,9 @@ class Main {
     2) students first initial
     3) description of an item 
 */
+    String lName = "Smith";
+    char fInitial = 'J';
+    String desc = "Red, edible, has leaves on it, is a fruit"
 
 
 
@@ -46,6 +52,9 @@ class Main {
     3) the status whether the battery is charging
 */
 
+    boolean lightsOn = true;
+    boolean gameOver = false;
+    boolean charging = false;
 
 
 
