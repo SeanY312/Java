@@ -62,6 +62,6 @@ class Main {
     // **************************************************
     // **** Don't write any code below here.  ***********
     // **************************************************
-  System.println(age);
+  System.out.println(age);
   }
 }
