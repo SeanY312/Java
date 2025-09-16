@@ -39,7 +39,7 @@ class Main {
 */
     String lName = "Smith";
     char fInitial = 'J';
-    String desc = "Red, edible, has leaves on it, is a fruit"
+    String desc = "Red, edible, has leaves on it, is a fruit";
 
 
 
