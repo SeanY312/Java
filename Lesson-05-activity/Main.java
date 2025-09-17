@@ -14,7 +14,10 @@ class Main {
     
 */
 
-
+int apples = 4;
+int oranges = 5;
+int fruits = oranges + apples;
+System.out.println(fruits);
 
 /*  
     Challenge 2:
