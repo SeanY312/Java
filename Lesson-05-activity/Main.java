@@ -63,7 +63,8 @@ System.out.println(y);
 
 */
  
-
+double y2 = (2*x*(x + 1)*(-x / 2.0))/A;
+System.out.println(y2);
 
 
 
