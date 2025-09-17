@@ -99,7 +99,11 @@ System.out.println(area);
     are left over after we filled as many baskets of 12 eggs.
 */
 
-
+int eggs = 100;
+int baskets = eggs / 12;
+int baskets2 = eggs % 12;
+System.out.println(baskets);
+System.out.println(baskets2);
 
 
 
