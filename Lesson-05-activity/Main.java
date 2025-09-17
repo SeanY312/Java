@@ -27,7 +27,7 @@ class Main {
 int grade1 = 98;
 int grade2 = 100;
 int grade3 = 99;
-double avgGrades = (grade1 + grade2 + grade3) / 2.0;
+double avgGrades = (grade1 + grade2 + grade3) / 3.0;
 System.out.println(avgGrades);
 
 /*  
