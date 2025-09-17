@@ -77,9 +77,10 @@ System.out.println(y2);
     Declare and assign values to any new variables
 */
  
-
-
-
+double b = 4;
+double h = 3;
+double area = (0.5 * b * h);
+System.out.println(area);
 
 
 /*  
