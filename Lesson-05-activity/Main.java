@@ -13,10 +13,7 @@ class Main {
     calculated sum and then display it.
     
 */
-int grade1 = 98;
-int grade2 = 100;
-int avgGrades = (grade1 + grade2) / 2;
-System.out.println(avgGrades);
+
 
 
 /*  
@@ -27,7 +24,11 @@ System.out.println(avgGrades);
     
 */
 
-
+int grade1 = 98;
+int grade2 = 100;
+int grade3 = 99;
+int avgGrades = (grade1 + grade2 + grade3) / 2.0;
+System.out.println(avgGrades);
 
 /*  
     Challenge 3:
