@@ -53,8 +53,8 @@ System.out.println(avgGrades);
 */
 double A = 40;
 double x = 7;
-double y = (A)/(x+1)
-System.out.println(y)
+double y = (A)/(x+1);
+System.out.println(y);
 /*  
     Challenge 5:
     Using the variables same variables from challenge4 above, write the following equation in EQ2.PNG file in Java, store the result and the display it:
