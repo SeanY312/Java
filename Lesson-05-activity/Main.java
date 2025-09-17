@@ -30,8 +30,9 @@ System.out.println(fruits);
 int grade1 = 98;
 int grade2 = 100;
 int grade3 = 99;
-double avgGrades = (grade1 + grade2 + grade3) / 3.0;
-System.out.println(avgGrades);
+double gradeSum = grade1 + grade2 + grade3;
+System.out.println(gradeSum);
+
 
 /*  
     Challenge 3:
@@ -40,7 +41,8 @@ System.out.println(avgGrades);
     Declare and assign values to any new variables
     NOTE: Does it look correct, check with a calculator?
 */
-
+double avgGrades = (gradeSum) / 3.0;
+System.out.println(avgGrades);
 
 
 /*  
@@ -49,7 +51,7 @@ System.out.println(avgGrades);
     Declare and assign values to any new variables
 
 */
-  
+
 
 /*  
     Challenge 5:
