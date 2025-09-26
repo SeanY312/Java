@@ -13,7 +13,7 @@ class Main {
   System.out.println("Enter x value");
   x = Input.readDouble();
   y = Math.pow(x, 7);
-  System.out.println("X is " + x);
+  System.out.println("Y is " + y);
 
 /*  
     Challenge 2:
