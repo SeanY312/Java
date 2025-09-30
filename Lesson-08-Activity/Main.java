@@ -13,7 +13,7 @@ class Main {
 	return c;
  }
  double sphereVolume(double r){
-	double v = 4.0 / 3 * 3.14159265359 * Math.pow(r, 3);
+	double v = 4.0 / 3 * Math.PI * Math.pow(r, 3);
 	System.out.println("The volume is " + v);
 	return v;
  }
