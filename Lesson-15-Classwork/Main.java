@@ -8,11 +8,17 @@ class Main {
   double approxPI(int N){
     double result = 0;
     for(int x = 0; x < N; x++){
-      double t = 1.0/(1 + (x * 2));
-      System.out.println("t is " + t);
-      result += t;
-      System.out.println("Result is " + result);
+      double t = 1 + (x * 2);
+      if(x%2 == 1){
+        result -= (1 / t);
+        System.out.println("t is " + t);
+        System.out.println("Result is " + result);
+      }else{
+        result += (1 / t);
+        System.out.println("t is " + t);
+        System.out.println("Result is " + result);}
     }
+  System.out.println("Pi is about " + (4 * result));
   return 4 * result;
   }
   void init(){
