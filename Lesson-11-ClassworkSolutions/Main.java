@@ -3,7 +3,13 @@ class Main {
   public static void main(String[] args) {
     (new Main()).init();
   }
-
+  int results(int N){
+      int sum = 0;
+      for (int x = 1; x <= N; x++){
+        sum += x;
+      }
+    return sum;
+  }
   void init(){
     System.out.println(getUsername("joe123@aol.com"));
     
@@ -12,6 +18,7 @@ class Main {
 
     System.out.println(createUsername("Hoa","chen","987654321"));
     System.out.println(createUsername("Sam","Abhar","675849308"));
+    System.out.println(results(4));
 
     
   }
