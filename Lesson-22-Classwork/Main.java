@@ -7,7 +7,8 @@ class Main {
 
   void init(){
    String [] friends = {"Nick", "Ed", "Tank", "Tom", "Tak"};
-   convert(int[] c{32, 40, 60, 80});
+   int[] b = {32, 40, 60, 80};
+   convert(b);
     
   }
 
@@ -21,7 +22,9 @@ class Main {
     for(int x = 0; x < c.length; x++){
       f[x] = (int)celsiusToFarhenheit(c[x]);
     }
-    print(f);
+    for(int x = 0; x < f.length; x++){
+      print(f[x]);
+    }
     return f;
   }
 }
