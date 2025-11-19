@@ -7,7 +7,7 @@ class Main {
 
   void init(){
    String [] friends = {"Nick", "Ed", "Tank", "Tom", "Tak"};
-   int[] b = {32, 40, 60, 80};
+   int[] b = {0, 40, 60, 80};
    convert(b);
     
   }
