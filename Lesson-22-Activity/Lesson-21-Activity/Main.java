@@ -57,24 +57,15 @@ class Main {
   //
   // Return the quiz grade by counting the number of correct answers divided by
   // the number of quistions.
-  double quizGrader(char[] student, char[] key){
-    int right = 0;
-    String[] newStudent = new String[student.length];
-    for(int x = 0; x < student.length; x++){
-      newStudent[x] = "\"" + student[x] + "\",";
-    }
-    String[] newKey = new String[key.length];
-    for(int x = 0; x < key.length; x++)
-      newKey[x].equals(key[x]);  
-    for(int x=0; x < key.length; x++){
-      if(newKey[x].equals(newStudent[x]))
-        right ++;
-    }
-    double grade = right / key.length * 100;
-    print("Grade is " + grade);
-    return grade;
+double quizGrader(char[] studentAns, char[] ansKey){
+  double correctAns=0;
+  for(int i =0; i < ansKey.length; i++){
+    if(studentAns[i]==ansKey[i])
+    correctAns++;
   }
-
+  print(correctAns / ansKey.length * 100);
+  return correctAns / ansKey.length * 100;
+}
   
 
   
