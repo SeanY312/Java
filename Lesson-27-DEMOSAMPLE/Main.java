@@ -29,12 +29,41 @@ class Main {
     sub2[7] = 'e'; 
 
 
-    print(subEncryption("The weather is good today", sub, sub2)); 
-    print(subDecryption("Thu wuothur is gaad tadoy", sub, sub2)); 
-    print(shiftEncryption(subEncryption("The weather is good today", sub, sub2), 4));
-    print(shiftDecryption(shiftEncryption(subEncryption("The weather is good today", sub, sub2), 4),4));
-    print(pairingsEncryption("The weather is good today"));
-    print(pairingsDecryption("eew hh aeweewtae  ehtawwaehteTh"));
+    // print(subEncryption("The weather is good today", sub, sub2)); 
+    // print(subDecryption("Thu wuothur is gaad tadoy", sub, sub2)); 
+    // print(shiftEncryption(subEncryption("The weather is good today", sub, sub2), 4));
+    // print(shiftDecryption(shiftEncryption(subEncryption("The weather is good today", sub, sub2), 4),4));
+    //print(pairingsEncryption("1234561234561"));
+    //print(pairingsDecryption("136542136542"));
+    //print(unicodeEncryption("Hey what's good?"));
+    //print(unicodeDecryption("⭀⭝⭱⬘⭯⭠⭙⭬⬟⭫⬘⭟⭧⭧⭜⬷"));
+    String file = Input.readFile("test.txt");
+
+    String encodedMsg1 = subEncryption(file,sub,sub2);
+    print("Encoded1: " + encodedMsg1);
+
+    String encodedMsg2 = shiftEncryption(encodedMsg1, 4);
+    print("Encoded2: " + encodedMsg2);
+
+    String encodedMsg3 = pairingsEncryption(encodedMsg2);
+    print("Encoded3: " + encodedMsg3);
+
+    String encodedMsg4 = unicodeEncryption(encodedMsg3);
+    print("Encoded4: " + encodedMsg4);
+
+    
+    String decodedMsg1 = unicodeDecryption(encodedMsg4);
+    print("Decoded1: " + decodedMsg1);
+    
+    String decodedMsg2 = pairingsDecryption(decodedMsg1);
+    print("Pairings: " + decodedMsg2);
+    
+    String decodedMsg3 = shiftDecryption(decodedMsg2, 4);
+    print("Decoded3: " + decodedMsg3);
+
+    String decodedMsg4 = subDecryption(decodedMsg3, sub, sub2);
+    print("Decoded4: " + decodedMsg4);
+
   }
 
   String subEncryption(String s, char[] sub, char[] sub2){
@@ -96,21 +125,27 @@ class Main {
       bld += s.substring(x,x + 1);
     }
     int cutoff = bld.length();
+    // print("Cutoff: " + cutoff);
     if(bld.length() % 6.0 == 0){
-      repeat = bld.length() / 6;
-      for(int x = 0; x <= repeat; x ++){
+      for(int x = 0; x < cutoff; x += 6){
+        // print("bld before: " + bld);
         bld = bld + bld.substring(x, x+1) + bld.substring(x+2, x+3) + bld.substring(x+5, x+6) + bld.substring(x+4, x+5) + bld.substring(x+3, x+4) + bld.substring(x+1, x+2);
-      } 
-      bld = bld.substring(cutoff);
+        // print("bld after: " + bld);
+      }
+      // print("bld precutoff: " + bld);
+      bld = bld.substring(cutoff, bld.length()); 
     }else{
-      repeat = bld.length() / 6;
-       print("Repeat: " + repeat + " leftover: " + cutoff % 6 + 1);
-      for(int x = 0; x <= repeat; x ++){
+       repeat = bld.length() / 6;
+      //  print("Repeat: " + repeat + " leftover: " + cutoff % 6 );
+      for(int x = 0; x < cutoff / 6 * 6; x += 6){
+        // print("bld before: " + bld);
         bld = bld + bld.substring(x, x+1) + bld.substring(x+2, x+3) + bld.substring(x+5, x+6) + bld.substring(x+4, x+5) + bld.substring(x+3, x+4) + bld.substring(x+1, x+2);
-      } 
-      bld += bld.substring(0, cutoff % 6 + 1);
-      print("Cutoff: " + cutoff);
-      bld = bld.substring(cutoff + 1, bld.length());
+        // print("bld after: " + bld);
+      }
+      bld += bld.substring(0, cutoff % 6);
+      // print("bld: " + bld);
+      // print("Cutoff: " + cutoff);
+      bld = bld.substring(cutoff, bld.length());
     }
     return bld;
   }
@@ -123,22 +158,48 @@ class Main {
       bld += s.substring(x,x + 1);
     }
     int cutoff = bld.length();
+    // print("Cutoff: " + cutoff);
     if(bld.length() % 6.0 == 0){
-      repeat = bld.length() / 6;
-      for(int x = 0; x <= repeat; x ++){
-        bld = bld + bld.substring(x, x+1) + bld.substring(x+1, x+2) + bld.substring(x+5, x+6) + bld.substring(x+4, x+5) + bld.substring(x+3, x+4) + bld.substring(x+2, x+3);
-      } 
-      bld = bld.substring(cutoff);
+      for(int x = 0; x < cutoff; x += 6){
+        // print("bld before: " + bld);
+        bld = bld + bld.substring(x, x+1) + bld.substring(x+5, x+6) + bld.substring(x+1, x+2) + bld.substring(x+4, x+5) + bld.substring(x+3, x+4) + bld.substring(x+2, x+3);
+        // print("bld after: " + bld);
+      }
+      // print("bld precutoff: " + bld);
+      bld = bld.substring(cutoff, bld.length()); 
     }else{
-      repeat = bld.length() / 6;
-      // print("Repeat: " + repeat + " leftover: " + cutoff % 6 + 1);
-      for(int x = 0; x <= repeat; x ++){
-        bld = bld + "Pair: [ " + bld.substring(x, x+1) + bld.substring(x+5, x+6) + bld.substring(x+1, x+2) + bld.substring(x+4, x+5) + bld.substring(x+3, x+4) + bld.substring(x+2, x+3) + " ]";
-        System.out.println(bld);
-      } 
-      bld = bld.substring(0, cutoff % 6 + 1) + bld;
+       repeat = bld.length() / 6;
+      //  print("Repeat: " + repeat + " leftover: " + cutoff % 6 );
+      for(int x = 0; x < cutoff / 6 * 6; x += 6){
+        // print("bld before: " + bld);
+        bld = bld + bld.substring(x, x+1) + bld.substring(x+5, x+6) + bld.substring(x+1, x+2) + bld.substring(x+4, x+5) + bld.substring(x+3, x+4) + bld.substring(x+2, x+3);
+        // print("bld after: " + bld);
+      }
+      bld += bld.substring(0, cutoff % 6);
+      // print("bld: " + bld);
       // print("Cutoff: " + cutoff);
       bld = bld.substring(cutoff, bld.length());
+    }
+    return bld;
+  }
+
+
+  String unicodeEncryption(String s){
+    String bld = "";
+    int c = 0;
+    for(int x = 0; x < s.length(); x++){
+      c = (int)(s.charAt(x));
+      bld += (char)(c + 11000);
+    }
+    return bld;
+  }
+
+  String unicodeDecryption(String s){
+    String bld = "";
+    int c = 0;
+    for(int x = 0; x < s.length(); x++){
+      c = (int)(s.charAt(x));
+      bld += (char)(c - 11000);
     }
     return bld;
   }
@@ -149,32 +210,5 @@ class Main {
     int range = upper - lower;
     return (int)(Math.random()*range+lower);
   }
-  // Encoding message
-    //String file = Input.readFile("test.txt");
-
-    //substituion
-    //String encodedMsg1 = subEncryption(file,sub,sub2);
-    //Input.writeFile("Encode1.txt",encodedMsg1);
-
-    // caesar cipher
-    //String encodedMsg2 = encode(encodedMsg1);
-    //Input.writeFile("Encode2.txt",encodedMsg2);
-
-    // reverse
-    //String encodedMsg3 = reverse(encodedMsg2);
-    //Input.writeFile("Encode3.txt",encodedMsg3);
-
-    
-    // decoding message
-    //String file2 = Input.readFile("Encode1.txt");
-    
-    //String decodedMsg1 = reverse(file2);
-    //Input.writeFile("Decode1.txt", decodedMsg1);
-    
-    //String decodedMsg2 = decode(decodedMsg1);
-    //Input.writeFile("Decode2.txt", decodedMsg2);
-    
-     //String decodedMsg3 = subEncryption(decodedMsg2, sub2, sub);
-    //Input.writeFile("Decode1.txt", decodedMsg3);
-
+  
 }
