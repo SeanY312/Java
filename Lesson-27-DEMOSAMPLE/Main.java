@@ -40,29 +40,32 @@ class Main {
     String file = Input.readFile("test.txt");
 
     String encodedMsg1 = subEncryption(file,sub,sub2);
-    print("Encoded1: " + encodedMsg1);
+    print("Sub1: " + encodedMsg1);
 
     String encodedMsg2 = shiftEncryption(encodedMsg1, 4);
-    print("Encoded2: " + encodedMsg2);
+    print("Shift2: " + encodedMsg2);
 
     String encodedMsg3 = pairingsEncryption(encodedMsg2);
-    print("Encoded3: " + encodedMsg3);
+    print("Pairings3: " + encodedMsg3);
 
     String encodedMsg4 = unicodeEncryption(encodedMsg3);
-    print("Encoded4: " + encodedMsg4);
+    print("Uni4: " + encodedMsg4);
 
     
     String decodedMsg1 = unicodeDecryption(encodedMsg4);
-    print("Decoded1: " + decodedMsg1);
+    print("Uni1: " + decodedMsg1);
     
     String decodedMsg2 = pairingsDecryption(decodedMsg1);
     print("Pairings: " + decodedMsg2);
     
     String decodedMsg3 = shiftDecryption(decodedMsg2, 4);
-    print("Decoded3: " + decodedMsg3);
+    print("Shift3: " + decodedMsg3);
 
     String decodedMsg4 = subDecryption(decodedMsg3, sub, sub2);
-    print("Decoded4: " + decodedMsg4);
+    print("Sub2: " + decodedMsg4);
+    // print("abcdef123456ghijkl");
+    // print(pairingsEncryption("abcdef123456ghijkl789"));
+    // print(pairingsDecryption(pairingsEncryption("abcdef123456ghijkl789")));
 
   }
 
@@ -128,24 +131,24 @@ class Main {
     // print("Cutoff: " + cutoff);
     if(bld.length() % 6.0 == 0){
       for(int x = 0; x < cutoff; x += 6){
-        // print("bld before: " + bld);
+       // print("bld before: " + bld);
         bld = bld + bld.substring(x, x+1) + bld.substring(x+2, x+3) + bld.substring(x+5, x+6) + bld.substring(x+4, x+5) + bld.substring(x+3, x+4) + bld.substring(x+1, x+2);
-        // print("bld after: " + bld);
+        //print("bld after: " + bld);
       }
-      // print("bld precutoff: " + bld);
+      //print("bld precutoff: " + bld);
       bld = bld.substring(cutoff, bld.length()); 
     }else{
        repeat = bld.length() / 6;
-      //  print("Repeat: " + repeat + " leftover: " + cutoff % 6 );
+       //print("Repeat: " + repeat + " leftover: " + cutoff % 6 );
       for(int x = 0; x < cutoff / 6 * 6; x += 6){
         // print("bld before: " + bld);
         bld = bld + bld.substring(x, x+1) + bld.substring(x+2, x+3) + bld.substring(x+5, x+6) + bld.substring(x+4, x+5) + bld.substring(x+3, x+4) + bld.substring(x+1, x+2);
         // print("bld after: " + bld);
       }
-      bld += bld.substring(0, cutoff % 6);
+      //bld += bld.substring(0, cutoff % 6);
       // print("bld: " + bld);
       // print("Cutoff: " + cutoff);
-      bld = bld.substring(cutoff, bld.length());
+      bld = bld.substring(cutoff, bld.length()) + bld.substring(repeat * 6, repeat * 6 + cutoff % 6);
     }
     return bld;
   }
@@ -169,16 +172,17 @@ class Main {
       bld = bld.substring(cutoff, bld.length()); 
     }else{
        repeat = bld.length() / 6;
-      //  print("Repeat: " + repeat + " leftover: " + cutoff % 6 );
+        // print("Repeat: " + repeat + " leftover: " + cutoff % 6 );
       for(int x = 0; x < cutoff / 6 * 6; x += 6){
         // print("bld before: " + bld);
         bld = bld + bld.substring(x, x+1) + bld.substring(x+5, x+6) + bld.substring(x+1, x+2) + bld.substring(x+4, x+5) + bld.substring(x+3, x+4) + bld.substring(x+2, x+3);
         // print("bld after: " + bld);
       }
-      bld += bld.substring(0, cutoff % 6);
-      // print("bld: " + bld);
-      // print("Cutoff: " + cutoff);
-      bld = bld.substring(cutoff, bld.length());
+      //bld += bld.substring(0, cutoff % 6);
+      //  print("bld: " + bld);
+      //  print("Cutoff: " + cutoff);
+      //bld = bld.substring(cutoff, bld.length());
+      bld = bld.substring(cutoff, bld.length()) + bld.substring(repeat * 6, repeat * 6 + cutoff % 6);
     }
     return bld;
   }
