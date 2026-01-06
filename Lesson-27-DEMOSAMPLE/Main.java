@@ -66,6 +66,11 @@ class Main {
     // print("abcdef123456ghijkl");
     // print(pairingsEncryption("abcdef123456ghijkl789"));
     // print(pairingsDecryption(pairingsEncryption("abcdef123456ghijkl789")));
+    print("We should attack at dusk!");
+    print(unicodeEncryption(pairingsEncryption(
+    shiftEncryption(subEncryption("We should attack at dusk!", sub, sub2),4))));
+    print(subDecryption(shiftDecryption(pairingsDecryption(unicodeDecryption(
+    unicodeEncryption(pairingsEncryption(shiftEncryption(subEncryption("We should attack at dusk!", sub, sub2),4))))),4),sub,sub2));
 
   }
 
