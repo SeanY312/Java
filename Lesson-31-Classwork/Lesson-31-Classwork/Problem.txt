@@ -1,0 +1,11 @@
+1)
+Write a function isHealthy in the Animal class that return true if the animal's weight is between 30 and 100 pounds exclusive, otherwise return false.
+
+2)
+Write a function convertPoundsToKilo() in the Animal class and returns the weight in kilograms.
+
+3)
+Create two animal objects in the init function and store each animal in a variable.
+
+4)
+Display if each of the animals is healthy or unhealthy in the init function using the function isHealthy.
