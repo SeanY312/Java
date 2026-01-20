@@ -1,0 +1,6 @@
+Problem 1:
+Display all student names that has an average greater than 70.
+
+Problem2:
+Display all student names that are sophmores or lower and have an average between 60 and 70 inclusive.
+
