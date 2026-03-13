@@ -56,13 +56,13 @@ class Main {
     print("Uni1: " + decodedMsg1);
     
     String decodedMsg2 = pairingsDecryption(decodedMsg1);
-    print("Pairings: " + decodedMsg2);
+    print("Pairings2: " + decodedMsg2);
     
     String decodedMsg3 = shiftDecryption(decodedMsg2, 4);
     print("Shift3: " + decodedMsg3);
 
     String decodedMsg4 = subDecryption(decodedMsg3, sub, sub2);
-    print("Sub2: " + decodedMsg4);
+    print("Sub4: " + decodedMsg4);
     // print("abcdef123456ghijkl");
     // print(pairingsEncryption("abcdef123456ghijkl789"));
     // print(pairingsDecryption(pairingsEncryption("abcdef123456ghijkl789")));
