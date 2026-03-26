@@ -20,6 +20,15 @@ class Main {
 
     String queryResult="";
     String sql ="";
+    Database db = new Database("jdbc:sqlite:students.db");
+    
+    //sql = "Select * From cr101 Where Teacher1 = 'BANU'";
+    //sql = "Select * From cr101 Where Teacher1 = 'PORCHETTA' And Period = '10'";
+    //sql = "Select Distinct StudentID From cr101";
+    //sql = "Select StudentID, Course, Period From cr101 Where Room In('322','105','106','323') And Grade = '11'";
+    sql = "Select * From cr101 Where Course like 'M%X'";
+    queryResult = db.runSQL(sql, "table-auto");
+    print(queryResult);
 
    
 

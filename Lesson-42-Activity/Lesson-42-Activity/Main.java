@@ -27,7 +27,7 @@ class Main {
     //sql += "Delete From cr101 Where StudentID = 'STUDENT1200' And Course = 'ZQCTEDA'";
     //sql += "Select Course From cr101 Where StudentID = 'STUDENT1200'";
     //sql += "Update cr101 Set Room = '213' Where Period In(4,5) And Teacher1 = 'DOYLE'"
-    sql += "Select * From cr101 Where (Period = '4' Or Period = '5') And Teacher1 = 'DOYLE'";
+    sql += "Select * From cr101 Where Teacher1 = 'DOYLE'";
     queryResult = db.runSQL(sql, "table-auto");
     print(queryResult);
    
