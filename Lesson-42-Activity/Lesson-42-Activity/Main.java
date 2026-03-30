@@ -27,7 +27,12 @@ class Main {
     //sql += "Delete From cr101 Where StudentID = 'STUDENT1200' And Course = 'ZQCTEDA'";
     //sql += "Select Course From cr101 Where StudentID = 'STUDENT1200'";
     //sql += "Update cr101 Set Room = '213' Where Period In(4,5) And Teacher1 = 'DOYLE'"
-    sql += "Select * From cr101 Where Teacher1 = 'DOYLE'";
+    //sql += "Select * From cr101 Where Teacher1 = 'DOYLE' And Period In(4,5)";
+    //sql += "Update cr101 Set Teacher1 = 'ROFFLER' Where Teacher1 = 'ARCHETTI' And Course = 'MQF44QGF' And Section = 1";
+    //sql = "Select * From cr101 Where Course = 'MQF44QGF' And Section = 1";
+    sql += "Update cr101 Set Grade = '11', OffClass = '3C8' Where StudentID = 'STUDENT999';";
+    sql += "Select * From cr101 Where StudentID = 'STUDENT999';";
+    //sql += "Insert Into cr101() Values ";
     queryResult = db.runSQL(sql, "table-auto");
     print(queryResult);
    
