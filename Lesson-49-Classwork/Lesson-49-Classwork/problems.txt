@@ -1,0 +1,5 @@
+Problem 1
+Get the div with an id of output which you will be where you display your information.
+
+Problem 2
+For each employee display their employee id, first name and last name by building a string of html. Don't for get to assign the string to output div.

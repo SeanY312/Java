@@ -1,0 +1,11 @@
+.flex{
+    display: flex;
+    flex:1;
+}
+#div{
+    background-color: mediumspringgreen;
+}
+*{
+    border-style:solid;
+    border-color:black;
+}
