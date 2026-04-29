@@ -38,9 +38,10 @@ class Main {
     
    // Add your  code here
     String sql = "Select tracks.Name, tracks.Composer, albums.Title From tracks Inner Join albums ON tracks.AlbumId = albums.AlbumId Limit 20";
-    
+    String sql2 = "Select employees.EmployeeId, employees.FirstName, employees.LastName, employees.City, employees.Country from employees";
     server.createContext("/", new RouteHandler("You are connected, but route not given or incorrect....") );
     server.createContext("/tracks", new RouteHandler(db, sql));
+    server.createContext("/employees", new RouteHandler(db, sql2));
 
   
     //Start the server
