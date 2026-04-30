@@ -14,10 +14,31 @@
   
   <!-- Call the int function when website loads -->
   <body onload="init()">
-    <div></div>
-    <nav></nav>
-    <div>
-    </div>>
+    <div id="header">Lesson 54 ACTIVITY</div>
+    <div id="nav">
+      <div class="">
+      <h1>Navigation - Home Page</h1>
+      </div>
+      <a class="button">Home</a>
+      <a class="button">Customers</a>
+      <a class="button">Employees</a>
+      <a class="button">Songs</a>
+    </div>
+    <div class="container">
+      <div class="searchpanel">
+        <p>Left Panel</p>
+        <input type="text" placeholder="Search First Name" id="firstBox"/>
+        <a class="button" onclick="generateCards(customers)">Search</a>
+    
+        </div>
+      <div id="mainpanel">Center Panel
+        <p>This webpage will allow you to browse the Chinook database. There are three pages which you can search for customers, employees, and songs.</p>
+      </div>
+      <div class="searchpanel">Right Panel</div>
+    </div>
+    <div id="foot">
+      <h1>Footer</h1>
+    </div>
 
   </body>
 </html>
